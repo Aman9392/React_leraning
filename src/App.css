@@ -36,6 +36,14 @@
     transform: rotate(360deg);
   }
 }
-.blank{
-  color: red;
+.navbar-nav{
+  margin: 0px 0px 0px 0px !important
+  ;
 }
+.src{
+  margin-left: 850px !important;
+}
+
+/* .btn{
+  margin-left: 20px;
+} */
