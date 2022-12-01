@@ -1,10 +1,13 @@
-// import logo from './logo.svg';
-import Navbar from'./componentes/Navbar'
 import './App.css';
+import Navbar from'./componentes/Navbar'
+import State from'./componentes/State';
 function App() {
   return (
     <>
-      <Navbar/>    
+      <Navbar   title = "Aman"  text = "About"/>;
+      <div className="container">
+      <State heading="Type your comments"/>
+      </div>
     </>
   );
 }

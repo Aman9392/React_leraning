@@ -43,7 +43,7 @@
 .src{
   margin-left: 850px !important;
 }
-
-/* .btn{
-  margin-left: 20px;
-} */
+.text{
+  display: flex;
+  justify-items: center;
+}
