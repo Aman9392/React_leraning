@@ -5,23 +5,28 @@ export default function State(props) {
   const handleup = () => {
     let newstate = state.toUpperCase();
     setState(newstate);
+    props.showalert("Converted to Upper Case " , "success")
   }
   const handlelo = () => {
     let newstate = state.toLowerCase();
     setState(newstate);
+    props.showalert("Converted to Lover Case " , "success")
   }
   const handleclear = () => {
     let newstate = '';
     setState(newstate);
+    props.showalert("Text clear" , "success")
   }
-  const handlecopy = () =>{
+  const handlecopy = () => {
     var text = document.getElementById('block');
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showalert("Text copy" , "success")
   }
-  const handleExtraSpaces = () =>{
+  const handleExtraSpaces = () => {
     let newText = state.split(/[ ]+/);
     setState(newText.join(" "))
+    props.showalert(" Remove Extra Spaces" , "success")
   }
   const handleonchanged = (event) => {
     setState(event.target.value);
@@ -31,10 +36,10 @@ export default function State(props) {
   //setState("who is Aman"); this is write way
   return (
     <>
-      <div className='container my-3'>
+      <div className='container my-3' style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
         <h2>{props.heading}</h2>
         <div className="text">
-          <textarea className="area" id="block" value={state} onChange={handleonchanged} cols="150" rows="8"></textarea>
+          <textarea className="area" id="block"  value={state} onChange={handleonchanged} cols="150" rows="8" style={{ backgroundColor: props.mode === 'dark' ? '#343a40' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}></textarea>
         </div>
         <button className=" my-2 btn btn-primary mx-2" onClick={handleup}>Convert TO Upper case</button>
         <button className=" my-2 btn btn-primary mx-2" onClick={handlelo}>Convert TO lower case</button>
@@ -42,12 +47,12 @@ export default function State(props) {
         <button className=" my-2 btn btn-primary mx-2" onClick={handlecopy}>Copy</button>
         <button className=" my-2 btn btn-primary mx-2" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
       </div>
-      <div className="container">
+      <div className="container" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
         <h2>Your Accurate Words and charachter</h2>
         <p>{state.split(" ").length} Words and {state.length} Charchter</p>
         <p> {0.008 * state.split(" ").length} Minutes read </p>
         <h2>Preview</h2>
-        <p>{state}</p>
+        <p>{state.length>0?state:"Enter something in text box to Preview here"}</p>
       </div>
 
     </>
