@@ -1,32 +1,38 @@
-import React, { useState } from 'react'
+import React from 'react'
+// import React, { useState } from 'react'
 
-export default function About() {
-    const [mystyle, setMyStyle] = useState
-        ({
-            color: 'black',
-            backgroundColor: 'white',
-        })
-    const [btntext, setBtnText] = useState('Enable ligth Mode')
-    const togalstyle = () => {
-        if (mystyle.color === 'white') {
-            setMyStyle({
-                color: 'black',
-                backgroundColor: 'white',
-                border: '1px solid white',
-            })
-            setBtnText('Enable light mode');
-        }
-        else {
-            setMyStyle({
-                color: 'white',
-                backgroundColor: 'black',
-            })
-            setBtnText('Enable Dark mode')
-        }
+export default function About(props) {
+    let mystyle = {
+        color: props.mode === 'dark' ? 'white' : '#042743',
+        backgroundColor: props.mode === 'dark' ? 'rgb(36 74 104)' : 'white',
     }
+    // const [mystyle, setMyStyle] = useState
+    //     ({
+    //         color: 'black',
+    //         backgroundColor: 'white',
+    //     })
+    // const [btntext, setBtnText] = useState('Enable ligth Mode')
+    // const togalstyle = () => {
+    //     if (mystyle.color === 'white') {
+    //         setMyStyle({
+    //             color: 'black',
+    //             backgroundColor: 'white',
+    //             border: '1px solid white',
+    //         })
+    //         setBtnText('Enable light mode');
+    //     }
+    //     else {
+    //         setMyStyle({
+    //             color: 'white',
+    //             backgroundColor: 'black',
+    //         })
+    //         setBtnText('Enable Dark mode')
+    //     }
+    // }
     return (
         <>
             <div className='container my-5' style={mystyle}>
+                {/* <h1 className="my-3" style={{ color:props.mode === 'dark'?'white':'#042743'}}></h1> */}
                 <h2>About Us</h2>
                 <div className="accordion  my-3" id="accordionExample" style={mystyle}>
                     <div className="accordion-item" style={mystyle}>
@@ -66,9 +72,9 @@ export default function About() {
                         </div>
                     </div>
                 </div>
-                <div className="container my-2">
+                {/* <div className="container my-2">
                     <button onClick={togalstyle} className="btn btn-primary">{btntext}</button>
-                </div>
+                </div> */}
             </div>
         </>
     )

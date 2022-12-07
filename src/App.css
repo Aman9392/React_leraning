@@ -32,19 +32,26 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
-.navbar-nav{
-  margin: 0px 0px 0px 0px !important
-  ;
+
+.navbar-nav {
+  margin: 0px 0px 0px 0px !important;
 }
-.src{
-  margin-left: 900px !important;
-  
+
+.src {
+  margin-left: 800px !important;
+
 }
-.text{
+
+.text {
   display: flex;
   justify-items: center;
+}
+
+.bot {
+  margin-left: none !important;
 }
