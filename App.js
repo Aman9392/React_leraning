@@ -24,6 +24,7 @@ export default class App extends Component {
             <Route exact path="/Health" element={<News key="Health" pageSize={this.pageSize} country="in" category="Health" />}></Route>
           </Routes>
         </BrowserRouter>
+        
       </div>
     )
   }
