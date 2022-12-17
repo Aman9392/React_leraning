@@ -36,12 +36,3 @@
     transform: rotate(360deg);
   }
 }
-.navbar{
-  position: fixed;
-  z-index: 997;
-  top: 0;
-  width: 100%;
-}
-.top{
-  margin-top: 70px !important;
-}
