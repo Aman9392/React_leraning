@@ -6,7 +6,10 @@ export class Newsitem extends Component {
         return (
             <div className='my-3'>
                 <div className="card">
-                <span className="position-absolute top-0  translate-middle badge rounded-pill bg-danger" style={{left:'90%', zindex:'1'}}>{source}</span>
+                    <div>
+                        
+                        <span className="badge rounded-pill bg-danger d-flex justify-content-end position-absolute ">{source}</span>
+                    </div>
                     <img src={!imageurl ? "https://aniportalimages.s3.amazonaws.com/media/details/ANI-20221209223555.jpg" : imageurl} className="card-img-top" alt="..." />
                     <div className="card-body">
                         <h5 className="card-title">{title}</h5>
